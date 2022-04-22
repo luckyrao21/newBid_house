@@ -112,7 +112,7 @@ exports.forgotPassword = (request, response) => {
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
                  
       };
-
+// ........................
       transporter.sendMail(message, (err, info) => {
         if (err) {
           console.log(err);
