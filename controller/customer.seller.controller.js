@@ -107,9 +107,9 @@ exports.forgotPassword = (request, response) => {
         from: "bidauction23@gmail.com",
         to: result.email,
         subject: "Reset Password",
-        html: `
-                <input type="text" placeholder="enter new password">
-                <button>reset Password</button>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+        text: `
+                "YOUR OLD PASSWORD IS :"+result.password 
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
                  `
       };
 
