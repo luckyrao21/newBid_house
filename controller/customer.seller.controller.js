@@ -108,9 +108,9 @@ exports.forgotPassword = (request, response) => {
         to: result.email,
         subject: "Reset Password",
         text: `
-                "YOUR OLD PASSWORD IS :"+result.password 
+                YOUR OLD PASSWORD IS :`+result.password
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
-                 `
+                 
       };
 
       transporter.sendMail(message, (err, info) => {
