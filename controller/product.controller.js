@@ -227,7 +227,6 @@ exports.productListByCategory = (request, response, next) => {
         })
         .then(result => {
             if (result.length > 0)
-
                 return response.status(201).json(result);
             else
                 return response.status(201).json({ message: "Result Not Found......." });
