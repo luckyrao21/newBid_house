@@ -4,6 +4,7 @@ const bodyParser = require('body-parser')
 const bidRoute = require("./routes/bid.route")
 const complaintRoute = require("./routes/complaint.route")
 const orderRoute = require("./routes/order.route")
+const Razorpay=require('razorpay')
 const customerRouter = require("./routes/customer.seller.route")
 const path = require("path")
 const productRouter = require('./routes/product.route');
@@ -24,6 +25,7 @@ mongoose.connect("mongodb+srv://lucky:1234@cluster1.bvxkm.mongodb.net/E_auction?
 })
 
 app.use(bodyParser.urlencoded({ extended: true }));
+var instance = new Razorpay({ key_id: 'rzp_test_2ZGv8MA0qkfdTz', key_secret: 'sgWBJgIewU5cIMIXEGLPKR2g'})
 
 app.use(bodyParser.json());
 

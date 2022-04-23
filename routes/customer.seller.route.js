@@ -19,6 +19,8 @@ router.post("/signin",
     customerController.signin
 );
 
+router.post("/socialSign",customerController.socialLogin)
+
 router.post("/updateProfile",
     body('username').notEmpty(),
     body('email').notEmpty().isEmail(),

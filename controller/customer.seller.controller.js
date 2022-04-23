@@ -152,4 +152,24 @@ exports.resetPassword = (request, response) => {
     });
 }
 
-
+exports.socialLogin = (request, response) => {
+  const errors = validationResult(request);
+  if (!errors.isEmpty())
+    return response.status(400).json({ errors: errors.array() });
+  customerSeller.findOne({
+    email: request.body.email,
+    isBlocked: false
+  }).then(result => {
+    if (result) {
+      let payload = { subject: result._id };
+      let token = jwt.sign(payload, "giugifsyjhsadgjbjfbbdsfjbjbk");
+      return response.status(201).json({ status: "login success", data: result, token: token })
+    }
+    else {
+      return response.status(500).json({ failed: "login failed" })
+    }
+  }).catch(err => {
+    console.log(err);
+    return response.status(500).json({ error: "oops something went wrong" })
+  })
+}
