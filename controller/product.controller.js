@@ -289,7 +289,6 @@ exports.productById = (request, response, next) => {
                     .json({ message: "Result Not Found......." });
         })
         .catch((err) => {
-            console.log(err + "===========================errrrr");
             return response
                 .status(201)
                 .json({ error: "Internal Server Error......." });
@@ -327,7 +326,6 @@ exports.cancelProductListBySeller = (request, response, next) => {
                     .json({ message: "Result Not Found......." });
         })
         .catch((err) => {
-            console.log(err + "===========================errrrr");
             return response
                 .status(201)
                 .json({ error: "Internal Server Error......." });
