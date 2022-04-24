@@ -168,7 +168,6 @@ exports.isApprovedCancel = (request, response, next) => {
                 Product.findOne({ _id: request.body.productId })
                     .populate("creator")
                     .then((result) => {
-                        // console.log(result + "=======================================result");
                         let transporter = nodemailer.createTransport({
                             host: "smtp.gmail.com",
                             port: 587,
@@ -232,7 +231,6 @@ exports.searchProduct = (request, response, next) => {
             else return response.status(201).json({ message: "No Result Found...." });
         })
         .catch((err) => {
-            console.log(err + "===========================errrrr");
             return response
                 .status(201)
                 .json({ error: "Internal Server Error......." });
@@ -255,7 +253,6 @@ exports.productListByCategory = (request, response, next) => {
                     .json({ message: "Result Not Found......." });
         })
         .catch((err) => {
-            console.log(err + "===========================errrrr");
             return response
                 .status(201)
                 .json({ error: "Internal Server Error......." });
@@ -272,7 +269,6 @@ exports.productListBySeller = (request, response, next) => {
                     .json({ message: "Result Not Found......." });
         })
         .catch((err) => {
-            console.log(err + "===========================errrrr");
             return response
                 .status(201)
                 .json({ error: "Internal Server Error......." });
@@ -289,7 +285,6 @@ exports.productById = (request, response, next) => {
                     .json({ message: "Result Not Found......." });
         })
         .catch((err) => {
-            console.log(err + "===========================errrrr");
             return response
                 .status(201)
                 .json({ error: "Internal Server Error......." });
@@ -327,7 +322,6 @@ exports.cancelProductListBySeller = (request, response, next) => {
                     .json({ message: "Result Not Found......." });
         })
         .catch((err) => {
-            console.log(err + "===========================errrrr");
             return response
                 .status(201)
                 .json({ error: "Internal Server Error......." });
