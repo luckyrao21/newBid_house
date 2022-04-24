@@ -98,7 +98,7 @@ exports.edit = (request, response, next) => {
             console.log(err);
             return response
                 .status(201)
-                .json({ error: "Internal Server Error.............." });
+                .json({ error: "Internal Server Error......" });
         });
 };
 
