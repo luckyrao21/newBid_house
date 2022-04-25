@@ -1,4 +1,5 @@
 const express = require("express");
+<<<<<<< HEAD
 const adminRouter = require("./routes/admin.route");
 const bodyParser = require("body-parser");
 const bidRoute = require("./routes/bid.route");
@@ -7,6 +8,17 @@ const orderRoute = require("./routes/order.route");
 const customerRouter = require("./routes/customer.seller.route");
 const path = require("path");
 const productRouter = require("./routes/product.route");
+=======
+const adminRouter = require("./routes/admin.route")
+const bodyParser = require('body-parser')
+const bidRoute = require("./routes/bid.route")
+const complaintRoute = require("./routes/complaint.route")
+const orderRoute = require("./routes/order.route")
+const Razorpay=require('razorpay')
+const customerRouter = require("./routes/customer.seller.route")
+const path = require("path")
+const productRouter = require('./routes/product.route');
+>>>>>>> 2d3c29718e08894e3b34f4b91e7cbe479a0e5a64
 const cors = require("cors");
 
 const port = process.env.PORT || 3000;
@@ -28,11 +40,17 @@ mongoose
     });
 
 app.use(bodyParser.urlencoded({ extended: true }));
+var instance = new Razorpay({ key_id: 'rzp_test_2ZGv8MA0qkfdTz', key_secret: 'sgWBJgIewU5cIMIXEGLPKR2g'})
 
 app.use(bodyParser.json());
 
+<<<<<<< HEAD
 app.use(express.static(path.join(__dirname, "public")));
 
+=======
+app.use(express.static(path.join(__dirname, 'public')))
+// dfffffffffffffffffffffffffasdfdsafdsa
+>>>>>>> 2d3c29718e08894e3b34f4b91e7cbe479a0e5a64
 app.use("/admin", adminRouter);
 app.use("/customer", customerRouter);
 app.use("/bid", bidRoute);
