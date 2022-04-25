@@ -36,7 +36,7 @@ exports.signup = (request, response) => {
                 if (err) {
                     console.log(err);
                 } else {
-                    console.log("SUCCESS================================\n" + info);
+                    console.log("SUCCESS============================\n" + info);
                 }
             });
             console.log(result);
